@@ -1,0 +1,25 @@
+{
+  "name": "frontend-nanodegree-mobile-portfolio",
+  "version": "1.0.0",
+  "description": "Performance optimization project that is part of Udacity's Front-End Development Nanodegree",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chungsam/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chungsam/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/chungsam/frontend-nanodegree-mobile-portfolio#readme"
+}
