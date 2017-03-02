@@ -53,3 +53,11 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+
+
+### Optimizations
+#### Part 1: Optimize PageSpeed Insights score for index.html
+* Deferred loading of Google Analytics script
+* Moved fetching of web font to use @font-face in styles.css
+* Added "media=print" attribute to fetch print.css only for printing
