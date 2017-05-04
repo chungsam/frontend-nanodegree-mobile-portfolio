@@ -49,3 +49,18 @@ form {
  .container {
   background-color: rgba(240, 60, 60, 0.8);
 }
+
+.smallPizza {
+  width: 187.5px;
+  height: 325px;
+}
+
+.mediumPizza {
+  width: 250px;
+  height: 325px;
+}
+
+.largePizza {
+  width: 375px;
+  height: 325px;
+}

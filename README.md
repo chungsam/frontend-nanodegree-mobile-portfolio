@@ -61,3 +61,9 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 * Deferred loading of Google Analytics script
 * Moved fetching of web font to use @font-face in styles.css
 * Added "media=print" attribute to fetch print.css only for printing
+* Uglified and minified JS and CSS files
+* Resized and optimized image files
+
+#### Part 2:
+* Used cached value for document.body.scrolltop in updatePositions() to avoid forced synchronous layout
+
