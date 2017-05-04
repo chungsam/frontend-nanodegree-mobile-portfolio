@@ -393,9 +393,13 @@ var pizzaElementGenerator = function (i) {
   pizzaImage = document.createElement("img");
   pizzaDescriptionContainer = document.createElement("div");
 
-  pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
-  pizzaContainer.style.height = "325px";
+  // Added mediumPizza class as default for pizza size slider.
+  pizzaContainer.classList.add("randomPizzaContainer", "mediumPizza");
+
+  // Removed these to use CSS for styling instead of assigning style attributes during element generation.
+  // pizzaContainer.style.width = "33.33%";
+  // pizzaContainer.style.height = "325px";
+
   pizzaContainer.id = "pizza" + i; // gives each pizza element a unique id
   pizzaImageContainer.style.width = "35%";
 
@@ -442,49 +446,64 @@ var resizePizzas = function (size) {
 
   changeSliderLabel(size);
 
+  // Removed to instead use CSS classes to determine pizza size.
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
-  function determineDx(elem, size) {
-    var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
-    var oldSize = oldWidth / windowWidth;
+  // function determineDx(elem, size) {
+  //   var oldWidth = elem.offsetWidth;
+  //   var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+  //   var oldSize = oldWidth / windowWidth;
 
-    // Changes the slider value to a percent width
-    function sizeSwitcher(size) {
-      switch (size) {
-        case "1":
-          return 0.25;
-        case "2":
-          return 0.3333;
-        case "3":
-          return 0.5;
-        default:
-          console.log("bug in sizeSwitcher");
-      }
-    }
+  //   // Changes the slider value to a percent width
+  //   function sizeSwitcher(size) {
+  //     switch (size) {
+  //       case "1":
+  //         return 0.25;
+  //       case "2":
+  //         return 0.3333;
+  //       case "3":
+  //         return 0.5;
+  //       default:
+  //         console.log("bug in sizeSwitcher");
+  //     }
+  //   }
 
-    var newSize = sizeSwitcher(size);
-    var dx = (newSize - oldSize) * windowWidth;
+  //   var newSize = sizeSwitcher(size);
+  //   var dx = (newSize - oldSize) * windowWidth;
 
-    return dx;
-  }
+  //   return dx;
+  // }
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    var classToAdd;
-      switch (size) {
-        case "1":
-          classToAdd = "smallPizza";
-        case "2":
-          classToAdd = "mediumPizza";
-        case "3":
-          classToAdd = "largePizza";
-      }
+
+    var pizzaClassToAdd;
+    switch (size) {
+      case "1":
+        pizzaClassToAdd = "smallPizza";
+        break;
+      case "2":
+        pizzaClassToAdd = "mediumPizza";
+        break;
+      case "3":
+        pizzaClassToAdd = "largePizza";
+        break;
+      default:
+        console.log("bug in changePizzaSizes");
+    }
+
+
+
 
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
+
+      // Removed unnecessary way of calculating width for pizza containers, using CSS classes instead
       // var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
       // var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
       // document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-      document.querySelectorAll(".randomPizzaContainer")[i].classList.add(classToAdd);
+
+      // Clear all previously added pizza size classes and add the new size class
+      document.querySelectorAll(".randomPizzaContainer")[i].classList.remove("smallPizza", "mediumPizza", "largePizza");
+      document.querySelectorAll(".randomPizzaContainer")[i].classList.add(pizzaClassToAdd);
     }
   }
 

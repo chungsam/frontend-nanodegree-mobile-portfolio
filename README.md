@@ -66,4 +66,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 #### Part 2:
 * Used cached value for document.body.scrolltop in updatePositions() to avoid forced synchronous layout
+* Simplified calculation of widths for pizza size slider by using CSS classes instead of JavaScript.
+  * Got rid of in-line styling of width and height in randomPizzaContainer divs
+  * Removed complicated JS to calculate width, instead revised JS to add the correct pizza size classes based on pizza size slider value
 

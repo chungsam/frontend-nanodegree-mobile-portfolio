@@ -50,17 +50,17 @@ form {
   background-color: rgba(240, 60, 60, 0.8);
 }
 
-.smallPizza {
+.randomPizzaContainer .smallPizza {
   width: 187.5px;
   height: 325px;
 }
 
-.mediumPizza {
+.randomPizzaContainer .mediumPizza {
   width: 250px;
   height: 325px;
 }
 
-.largePizza {
+.randomPizzaContainer .largePizza {
   width: 375px;
   height: 325px;
 }
