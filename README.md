@@ -49,6 +49,9 @@ There are three required outcomes for this project:
 * Simplified calculation of widths for pizza size slider by using CSS classes instead of JavaScript.
   * Got rid of in-line styling of width and height in randomPizzaContainer divs
   * Removed complicated JS function to calculate width, instead revised document.QuerySelectorAll to add the correct pizza size classes based on pizza size slider value
+* Used cached query results for .randomPizzaContainers
+* Used screen.height to determine number of background sliding pizzas to create
+
 
 README from original Udacity repo below.
 
