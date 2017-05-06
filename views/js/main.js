@@ -493,7 +493,8 @@ var resizePizzas = function (size) {
 
 
     // Use cached query results. Remove existing classes and add new pizza size class
-    var allPizzaContainers = document.getElementsByClassName("randomPizzaContainer");
+
+    var allPizzaContainers = document.querySelectorAll(".randomPizzaContainer");
 
     allPizzaContainers.forEach(function (element) {
       element.classList.remove("smallPizza", "mediumPizza", "largePizza");
