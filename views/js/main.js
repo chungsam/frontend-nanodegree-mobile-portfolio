@@ -551,13 +551,23 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('mover');
 
   // This trick to cache the scrolltop was taken from Ilya's demo.
   var cachedScrollTop = document.body.scrollTop;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((cachedScrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+
+  // This trick to first cache the phase values into an array was borrowed from this post in the forum: https://discussions.udacity.com/t/project-4-how-do-i-optimize-the-background-pizzas-for-loop/36302 
+  // which points to this github gist: https://gist.github.com/anonymous/dbddbb3cbe8ff64dffd3
+  var phaseArray = [];
+  var length = items.length;
+
+  for (var i = 0; i < length; i++) {
+    phaseArray.push(Math.sin(cachedScrollTop / 1250) + i);
+  }
+
+  for (var i = 0; i < length; i++) {
+    var phase = phaseArray[i % 5];
+    items[i].style.transform = 'translateX(' + items[i].basicLeft + 100 * phase + 'px)';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -596,5 +606,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   updatePositions();
-  
+
 });
